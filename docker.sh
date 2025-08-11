@@ -10,7 +10,6 @@ cat <<'EOF' | sudo tee /etc/docker/daemon.json
     { "base": "10.20.0.0/16", "size": 24 }
   ],
   "mtu": 1200,
-  "live-restore": true,
   "iptables": true,
   "bridge": "none",
   "storage-driver": "overlay2"
@@ -18,3 +17,5 @@ cat <<'EOF' | sudo tee /etc/docker/daemon.json
 EOF
 
 sudo systemctl restart docker
+
+docker info | egrep 'Swarm|MTU'
