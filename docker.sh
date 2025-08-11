@@ -17,5 +17,3 @@ cat <<'EOF' | sudo tee /etc/docker/daemon.json
 EOF
 
 sudo systemctl restart docker
-
-docker info | egrep 'Swarm|MTU'
